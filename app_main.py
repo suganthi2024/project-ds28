@@ -143,7 +143,7 @@ def add_predictions(input_data):
     malicious_proba_percentage = prediction_proba[0][1] * 100
     
     st.write(f"Probability of being benign:\n **:green[{benign_proba_percentage:.2f}%]**")
-    st.write(f"Probability of being benign:\n **:red[{malicious_proba_percentage:.2f}%]**")
+    st.write(f"Probability of being malicious:\n **:red[{malicious_proba_percentage:.2f}%]**")
 
     st.write("This app can assist medical professionals in making a diagnosis, but should not be used as a substitute for a professional diagnosis.")
 
