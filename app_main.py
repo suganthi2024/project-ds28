@@ -131,16 +131,16 @@ def add_predictions(input_data):
     st.subheader("Prediction:")
     st. write("")
     
-    if prediction[0] == 0:
-        st.write("**The cell tumor is :green[Benign]**")
-    else:
-        st.write("**The cell tumor is :red[Malicious]**")
-
-    st. write("")
-
     # Convert probabilities to percentatges:
     benign_proba_percentage = prediction_proba[0][0] * 100
     malicious_proba_percentage = prediction_proba[0][1] * 100
+    
+    if prediction[0] == 0:
+        st.write(f"**There is a probability of {benign_proba_percentage:.2f}% that the cell tumor is :green[Benign]**")
+    else:
+        st.write(f"**There is a probability of {malicious_proba_percentage:.2f}% that cell tumor is :red[Malicious]**")
+
+    st. write("")
     
     st.write(f"Probability of being benign:\n **:green[{benign_proba_percentage:.2f}%]**")
     st.write(f"Probability of being malicious:\n **:red[{malicious_proba_percentage:.2f}%]**")
